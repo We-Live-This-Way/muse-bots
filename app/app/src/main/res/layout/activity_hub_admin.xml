@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hub admin"
+            android:textColor="@color/navy"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAdminStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Checking…"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Invite someone"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Creates a visitor invite with a ready-to-share link and key. Days the key works — 0 means no expiry."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etInviteName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Their name (e.g. Sam)"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Days: " />
+            <EditText
+                android:id="@+id/etInviteDays"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/btnInvite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="@color/teal"
+                android:text="Create invite" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Join requests"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="People waiting to join. Tap one to approve or deny."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/llRequests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/tvNoRequests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="No pending requests."
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Add a bot"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Adds a bot (or person) as a hub member. The key is shown ONCE — copy it right away."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etBotName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Bot name (e.g. Coder)"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+            <Button
+                android:id="@+id/btnAddMember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal"
+                android:text="Add as member" />
+            <Button
+                android:id="@+id/btnAddVisitor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add as visitor" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvNewKeyLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#8A2E2E"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvNewKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textIsSelectable="true"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnCopyKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Copy key"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Rotate a key"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Gives a member a fresh key. Their old key stops working right away."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/llMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/tvNoMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Tap to load members."
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnLoadMembers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Load members" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Groups"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Named lists for @mentions and broadcasts — @sales, @coders. @everyone is built in and is not a group. Tap a group to add or remove members."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etGroupName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="New group name (e.g. sales)"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnCreateGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/teal"
+            android:text="Create group" />
+
+        <LinearLayout
+            android:id="@+id/llGroups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/tvNoGroups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Tap to load groups."
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnLoadGroups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Load groups" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Listening"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Pick which bots always listen in a room and which only answer when called."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnListening"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/teal"
+            android:text="Open listening" />
+
+    </LinearLayout>
+</ScrollView>

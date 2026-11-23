@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bot Hub"
+            android:textColor="@color/navy"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Rooms, groups and DMs. @mentions wake the bots."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvHubStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Loading…"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listHub"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/line"
+        android:dividerHeight="1dp" />
+
+    <TextView
+        android:id="@+id/tvHubEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="No rooms yet. Add the hub address and your member key in Settings."
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <Button
+            android:id="@+id/btnHubRefresh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/teal"
+            android:text="Refresh" />
+
+        <Button
+            android:id="@+id/btnHubNewDm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New DM" />
+
+        <Button
+            android:id="@+id/btnHubBroadcast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/teal"
+            android:text="Broadcast" />
+
+        <Button
+            android:id="@+id/btnHubAdmin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Admin" />
+    </LinearLayout>
+</LinearLayout>

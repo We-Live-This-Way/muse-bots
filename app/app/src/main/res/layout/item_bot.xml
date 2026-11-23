@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="@color/cream">
+
+    <com.welivethisway.bots.api.BotAvatarView
+        android:id="@+id/vAvatar"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:visibility="gone" />
+
+    <!-- Kept for the Hub rows, which reuse this layout as a generic
+         initials circle (rooms, join requests, members, groups). -->
+    <TextView
+        android:id="@+id/tvAvatar"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:text="?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/circle" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/navy"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/muted"
+            android:textSize="13sp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+    </LinearLayout>
+
+    <!-- Working indicator (main bot list only — Hub rows leave it gone):
+         green while the bot has an active run, grey when idle. -->
+    <View
+        android:id="@+id/vWorking"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/circle"
+        android:visibility="gone" />
+
+</LinearLayout>

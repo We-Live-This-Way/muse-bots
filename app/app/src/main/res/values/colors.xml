@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#12263F</color>
+    <color name="logo_navy">#061F3D</color>
+    <color name="teal">#1E8A9B</color>
+    <color name="cream">#FFF8E8</color>
+    <color name="ink">#12263F</color>
+    <color name="muted">#5A6B7D</color>
+    <color name="bubble_bot">#FFFFFF</color>
+    <color name="bubble_mine">#1E8A9B</color>
+    <color name="line">#D8DEE6</color>
+    <color name="badge_rakazo">#1E8A9B</color>
+    <color name="badge_mausbot">#7A5C2E</color>
+</resources>

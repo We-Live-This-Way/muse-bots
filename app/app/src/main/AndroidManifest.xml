@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.welivethisway.bots"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <!-- Only permission the app needs: talk to the two bot servers.
+         usesCleartextTraffic is on because a MausBot server on the local
+         network (LAN address) is plain http; public servers should be https. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="WLTW Bots"
+        android:usesCleartextTraffic="true"
+        android:theme="@android:style/Theme.Material.Light.DarkActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ChatActivity" android:exported="false" />
+        <activity android:name=".ImageViewActivity" android:exported="false" />
+        <activity android:name=".SettingsActivity" android:exported="false" />
+        <activity android:name=".HubActivity" android:exported="false" />
+        <activity android:name=".HubRoomActivity" android:exported="false" />
+        <activity android:name=".HubAdminActivity" android:exported="false" />
+        <activity android:name=".HubListeningActivity" android:exported="false" />
+        <activity android:name=".RakazoSignInActivity" android:exported="false" />
+        <activity android:name=".MausBotPairActivity" android:exported="false" />
+    </application>
+
+</manifest>

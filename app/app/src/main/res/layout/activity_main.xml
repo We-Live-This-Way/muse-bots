@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/wltw_banner"
+        android:scaleType="centerCrop"
+        android:contentDescription="Miami skyline at sunset"
+        android:background="@color/navy" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:src="@drawable/wltw_logo"
+        android:scaleType="fitCenter"
+        android:contentDescription="We Live This Way — A South Florida Courier Co"
+        android:background="@color/logo_navy" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All your bots, in one list. Tap a bot to chat."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Loading…"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort by"
+                android:textColor="@color/muted"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/spSort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listBots"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/line"
+        android:dividerHeight="1dp" />
+
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="No bots yet. Add your servers in Settings, then sign in or pair."
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/teal"
+            android:text="Refresh" />
+
+        <Button
+            android:id="@+id/btnHub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hub" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Settings" />
+    </LinearLayout>
+</LinearLayout>

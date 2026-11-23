@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.welivethisway.bots'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.welivethisway.bots'
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // No third-party libraries. Network uses HttpURLConnection, JSON uses
+    // android's built-in org.json, and token storage uses the Android
+    // Keystore directly — so the build has no extra downloads beyond the
+    // Android Gradle Plugin and the Kotlin plugin themselves.
+}

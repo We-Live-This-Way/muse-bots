@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Servers"
+            android:textColor="@color/navy"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Enter each server's address. Nothing is hardcoded — the app only talks to the addresses you put here."
+            android:textColor="@color/navy"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Rakazo (the Rakazo host)"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Base URL — the Cloudflare tunnel address, e.g. https://rakazo.example.com" />
+        <EditText
+            android:id="@+id/etRakazoBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://…"
+            android:inputType="textUri" />
+
+        <TextView
+            android:id="@+id/tvRakazoStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+            <Button
+                android:id="@+id/btnRakazoSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal"
+                android:text="Sign in" />
+            <Button
+                android:id="@+id/btnRakazoSignOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign out" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="MausBot (the-openmausbot-host)"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Base URL — the Tailscale hostname or the direct address, e.g. https://openmausbot.example.com" />
+        <EditText
+            android:id="@+id/etMausbotBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://…"
+            android:inputType="textUri" />
+
+        <TextView
+            android:id="@+id/tvMausbotStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+            <Button
+                android:id="@+id/btnMausbotPair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal"
+                android:text="Pair" />
+            <Button
+                android:id="@+id/btnMausbotSignOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unpair" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/teal"
+            android:text="Save addresses" />
+
+        <TextView
+            android:id="@+id/tvSaved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Bot Hub"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Base URL — e.g. https://hub.welivethisway.com" />
+        <EditText
+            android:id="@+id/etHubBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://…"
+            android:inputType="textUri" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Your member key — the hub owner's key unlocks the admin tools." />
+        <EditText
+            android:id="@+id/etHubKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hub…"
+            android:inputType="textPassword|textNoSuggestions" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="How to get your key: the owner's key lives only in the hub's data/admin.key file on the Rakazo host — keys are stored hashed and can't be looked up."
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="On the Rakazo host, hubctl login-link prints a one-tap sign-in link; hubctl rotate &lt;name&gt; (or Rotate in Manage / this app's Admin) makes a fresh key, shown once."
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvHubStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+            <Button
+                android:id="@+id/btnHubVerify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal"
+                android:text="Verify" />
+            <Button
+                android:id="@+id/btnHubOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open Hub" />
+            <Button
+                android:id="@+id/btnHubSignOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign out" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
